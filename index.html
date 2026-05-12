@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============ PRIMARY SEO ============ -->
+<title>Ashton Dean | AI Solution Architect, Voice AI &amp; GTM Engineer</title>
+<meta name="description" content="Ashton Dean builds Voice AI agents, agentic n8n workflows, automated lead-gen pipelines, and SEO-optimized websites for businesses. AI Solution Architect at Outlander Ventures." />
+<meta name="author" content="Ashton Dean" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://ashtondean.com/" />
+
+<!-- ============ OPEN GRAPH (LinkedIn, Facebook) ============ -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ashton Dean | AI Solution Architect &amp; GTM Engineer" />
+<meta property="og:description" content="Voice AI agents, agentic workflows, GTM automation, and SEO-optimized websites." />
+<meta property="og:url" content="https://ashtondean.com/" />
+<meta property="og:image" content="https://ashtondean.com/og-image.png" />
+<meta property="og:site_name" content="Ashton Dean" />
+
+<!-- ============ TWITTER CARD ============ -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ashton Dean | AI Solution Architect" />
+<meta name="twitter:description" content="Voice AI agents, agentic workflows, GTM automation, and SEO-optimized websites." />
+<meta name="twitter:image" content="https://ashtondean.com/og-image.png" />
+
+<!-- ============ JSON-LD: PERSON (SEO + AEO) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ashton Dean",
+  "url": "https://ashtondean.com",
+  "image": "https://ashtondean.com/headshot.jpg",
+  "jobTitle": "AI Solution Architect",
+  "worksFor": { "@type": "Organization", "name": "Outlander Ventures" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Liberty University" },
+  "email": "mailto:ashdean1055@gmail.com",
+  "telephone": "+1-919-758-7027",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lynchburg", "addressRegion": "VA", "addressCountry": "US" },
+  "sameAs": [
+    "https://www.linkedin.com/in/ashton-dean-3144b7201"
+  ],
+  "knowsAbout": [
+    "Voice AI Agents", "Vapi", "n8n", "Agentic Workflows", "Retrieval-Augmented Generation",
+    "Go-to-Market Engineering", "Lead Generation Automation", "Large Language Models",
+    "React Native", "SEO", "Answer Engine Optimization", "Schema Markup"
+  ]
+}
+</script>
+
+<!-- ============ JSON-LD: FAQ (AEO - Answer Engine Optimization) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Ashton Dean do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ashton Dean is an AI Solution Architect who builds Voice AI agents with Vapi, agentic workflows in n8n, automated lead generation pipelines, and SEO-optimized websites for businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Go-to-Market (GTM) engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GTM engineering applies software automation to sales and marketing pipelines: automated prospecting, lead enrichment, outbound sequencing, and CRM workflow integration. Ashton builds these systems using n8n, Serper, Apify, and LLM-based qualification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools does Ashton Dean specialize in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "n8n, Vapi, OpenAI and Anthropic Claude APIs, Apify, Serper, Supabase, React Native, and standard web development tooling for SEO-optimized sites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Ashton Dean available for freelance work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Ashton takes on projects involving AI voice agents, workflow automation, GTM engineering, and SEO/AEO-optimized website builds. Contact via email at ashdean1055@gmail.com."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ============ STYLES ============ -->
+<style>
+/* ---------- DESIGN TOKENS (change these to restyle entire site) ---------- */
+:root {
+  /* Colors */
+  --bg:            #0d0e10;
+  --bg-elev:       #15171b;
+  --bg-card:       #1a1d22;
+  --border:        #262a30;
+  --text:          #e8eaed;
+  --text-dim:      #9aa0a6;
+  --text-faint:    #5f6368;
+  --accent:        #f97316;
+  --accent-soft:   rgba(249, 115, 22, 0.12);
+  --success:       #10b981;
+
+  /* Typography */
+  --font-display:  Georgia, 'Times New Roman', serif;
+  --font-body:     system-ui, -apple-system, sans-serif;
+  --font-mono:     'SF Mono', Menlo, Consolas, monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Layout */
+  --max-width: 1100px;
+  --radius:    8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
+
+/* ---------- HEADER / NAV ---------- */
+header.site {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13, 14, 16, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+header.site .container {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: var(--space-sm); padding-bottom: var(--space-sm);
+}
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--text); }
+nav ul { list-style: none; display: flex; gap: var(--space-md); }
+nav a { color: var(--text-dim); font-size: 0.9rem; }
+nav a:hover { color: var(--text); text-decoration: none; }
+@media (max-width: 640px) { nav ul { gap: var(--space-sm); } }
+
+/* ---------- HERO ---------- */
+.hero { padding: var(--space-xl) 0 var(--space-lg); }
+.hero .eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 0.8rem;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: var(--space-md);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05; font-weight: 700;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero p.lead {
+  font-size: 1.15rem; color: var(--text-dim);
+  max-width: 640px; margin-bottom: var(--space-md);
+}
+.hero .cta-row { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-md); }
+.btn {
+  display: inline-block; padding: 0.75rem 1.5rem;
+  border-radius: var(--radius); font-weight: 600; font-size: 0.95rem;
+  transition: all 0.2s ease; border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: var(--bg); }
+.btn-primary:hover { background: #ea580c; text-decoration: none; }
+.btn-ghost { border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: var(--text-dim); text-decoration: none; }
+
+/* ---------- SECTION HEADINGS ---------- */
+section { padding: var(--space-lg) 0; border-top: 1px solid var(--border); }
+section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-bottom: var(--space-sm); letter-spacing: -0.01em;
+}
+section .section-sub {
+  color: var(--text-dim); margin-bottom: var(--space-md);
+  font-size: 1rem; max-width: 640px;
+}
+.section-label {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- ABOUT / SERVICES ---------- */
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-sm); margin-top: var(--space-md);
+}
+.service-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: var(--space-sm) var(--space-md);
+}
+.service-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.service-card p { color: var(--text-dim); font-size: 0.9rem; }
+
+/* ---------- PROJECTS ---------- */
+.project {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+.project-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-sm);
+}
+.project h3 { font-family: var(--font-display); font-size: 1.5rem; }
+.project .meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint); }
+.project .summary { color: var(--text-dim); margin-bottom: var(--space-sm); }
+.project .role { font-size: 0.85rem; color: var(--accent); margin-bottom: var(--space-sm); }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: var(--space-sm) 0; }
+.tag {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  background: var(--accent-soft); color: var(--accent);
+  padding: 0.25rem 0.6rem; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.project-links { display: flex; gap: var(--space-sm); margin-top: var(--space-sm); font-size: 0.9rem; }
+.project-links a { color: var(--text); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+.project-links a:hover { text-decoration: none; color: var(--accent); }
+
+/* ---------- WORKFLOW DIAGRAM (for n8n projects without exposing the account) ---------- */
+.workflow {
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: var(--space-md);
+  margin: var(--space-sm) 0;
+  overflow-x: auto;
+}
+.workflow-title {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: var(--space-sm);
+}
+.workflow-flow {
+  display: flex; align-items: center; gap: 0.5rem;
+  flex-wrap: wrap; min-width: min-content;
+}
+.node {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.9rem;
+  min-width: 110px; text-align: center;
+  font-size: 0.8rem;
+}
+.node .node-type {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--text-faint); text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.node .node-name { color: var(--text); font-weight: 500; }
+.node.trigger { border-color: var(--success); }
+.node.ai { border-color: var(--accent); }
+.arrow {
+  color: var(--text-faint); font-family: var(--font-mono);
+  font-size: 1rem;
+}
+.workflow-note {
+  font-size: 0.8rem; color: var(--text-faint);
+  margin-top: var(--space-sm); font-style: italic;
+}
+
+/* ---------- OUTCOMES (metric strip in projects) ---------- */
+.outcomes {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-sm); margin-top: var(--space-sm);
+  padding-top: var(--space-sm); border-top: 1px solid var(--border);
+}
+.outcome strong { display: block; font-size: 1.5rem; color: var(--accent); font-family: var(--font-display); }
+.outcome span { font-size: 0.85rem; color: var(--text-dim); }
+
+/* ---------- SKILLS ---------- */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md); margin-top: var(--space-md);
+}
+.skill-group h4 {
+  font-family: var(--font-mono); font-size: 0.8rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent); margin-bottom: var(--space-xs);
+}
+.skill-group ul { list-style: none; }
+.skill-group li {
+  font-size: 0.9rem; color: var(--text-dim);
+  padding: 0.3rem 0; border-bottom: 1px solid var(--border);
+}
+
+/* ---------- FAQ (AEO) ---------- */
+.faq details {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md); margin-bottom: var(--space-xs);
+  background: var(--bg-card);
+}
+.faq summary {
+  cursor: pointer; font-weight: 600;
+  list-style: none; display: flex; justify-content: space-between;
+}
+.faq summary::after { content: '+'; color: var(--accent); font-size: 1.5rem; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq details p { margin-top: var(--space-sm); color: var(--text-dim); }
+
+/* ---------- CONTACT / FOOTER ---------- */
+.contact { text-align: center; padding: var(--space-lg) 0; }
+.contact h2 { margin-bottom: var(--space-sm); }
+.contact .contact-links {
+  display: flex; justify-content: center; gap: var(--space-md);
+  flex-wrap: wrap; margin-top: var(--space-md);
+}
+.contact .contact-links a { font-size: 1rem; }
+
+footer.site {
+  border-top: 1px solid var(--border);
+  padding: var(--space-md) 0;
+  text-align: center; color: var(--text-faint); font-size: 0.85rem;
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header class="site">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="Ashton Dean home">Ashton Dean</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-top: none;">
+    <div class="container">
+      <span class="eyebrow">AI Solution Architect · GTM Engineer · Lynchburg, VA</span>
+      <h1>I build <span class="accent">Voice AI agents</span>, agentic workflows, and the GTM systems that put them to work.</h1>
+      <p class="lead">
+        Currently designing automated lead-generation pipelines and Voice AI agents at Outlander Ventures.
+        Previously shipped React Native and SEO-optimized web apps. Recent B.S. in Information Technology (Web &amp; Mobile Programming) from Liberty University.
+      </p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT I DO ============ -->
+  <section id="services">
+    <div class="container">
+      <p class="section-label">What I do</p>
+      <h2>Four lanes, one playbook: ship working AI that pays for itself.</h2>
+      <p class="section-sub">I focus on systems where automation has a clear ROI — voice agents that book appointments, workflows that qualify leads, and websites that rank for the queries customers actually search.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Voice AI Agents</h3>
+          <p>Vapi-based inbound/outbound agents for booking, qualification, and customer support, with LLM-driven conversation logic.</p>
+        </div>
+        <div class="service-card">
+          <h3>Agentic Workflows</h3>
+          <p>Multi-step n8n workflows combining LLMs, RAG, and API chains to automate research, classification, and outreach.</p>
+        </div>
+        <div class="service-card">
+          <h3>GTM Engineering</h3>
+          <p>Automated lead generation, enrichment, and outbound systems built on Serper, Apify, and CRM integrations.</p>
+        </div>
+        <div class="service-card">
+          <h3>SEO &amp; AEO Sites</h3>
+          <p>Production websites engineered for organic search and AI answer engines (schema, technical SEO, structured content).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="work">
+    <div class="container">
+      <p class="section-label">Selected work</p>
+      <h2>Projects</h2>
+      <p class="section-sub">A mix of client work, capstone engineering, and personal builds. Workflow diagrams below are conceptual representations — actual n8n implementations remain private.</p>
+
+      <!-- ===== PROJECT 1: AI FUNDING RADAR ===== -->
+      <article class="project">
+        <div class="project-header">
+          <h3>AI Funding Radar — GPU Buyer Qualifier</h3>
+          <span class="meta">2025 · Collaboration</span>
+        </div>
+        <p class="role">Role: Built the qualification &amp; enrichment pipeline (everything downstream of the classifier). A collaborator built the RSS ingestion and the initial AI-funding LLM classifier.</p>
+        <p class="summary">
+          An n8n workflow that monitors a PRNewswire RSS feed and surfaces qualified GPU-buyer leads from the noise. The first LLM classifies whether each article describes an AI company raising a funding round — explicitly excluding IPOs, acquisitions, and VC fund formations. Articles passing this first gate trigger an instant email alert and enter the enrichment pipeline I built.
+        </p>
+        <p class="summary">
+          My pipeline extracts the company name via a structured-JSON LLM call, runs a Serper LinkedIn search for Machine Learning Engineers, then uses a second LLM as an <strong>evidence-based fact-checker</strong> — it reads the actual search snippets and decides whether the company genuinely employs ML talent. Companies that fail this verification are dropped. Those that pass trigger a second Serper search for decision-makers (CEO, CTO, Co-Founders, Head of AI, Head of Platform, Head of Research, Head of AI Infra, DevOps), and a final LLM call extracts each person's name, role, and LinkedIn URL as structured JSON.
+        </p>
+        <p class="summary">
+          Built for a GPU-database provider to identify AI startups most likely to need GPU compute right after raising capital. Uses two different OpenRouter models — a free lightweight model for the high-volume binary classification and a larger Qwen 2.5 VL model for extraction tasks — a cost-aware design choice. Defensive JSON parsing in custom code nodes handles malformed LLM output by extracting the first valid JSON object from any conversational wrapper.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">n8n</span>
+          <span class="tag">Evidence-based RAG</span>
+          <span class="tag">Serper API</span>
+          <span class="tag">OpenRouter</span>
+          <span class="tag">Qwen 2.5 VL</span>
+          <span class="tag">Structured JSON Extraction</span>
+          <span class="tag">Two-Stage Qualification</span>
+          <span class="tag">LinkedIn Discovery</span>
+        </div>
+
+        <div class="workflow" aria-label="AI Funding Radar workflow diagram">
+          <p class="workflow-title">Workflow Architecture</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">Trigger</span><span class="node-name">PRNewswire RSS</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Loop</span><span class="node-name">Per Article</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">LLM 1</span><span class="node-name">Classify: Funding + AI?</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Gate 1</span><span class="node-name">If True</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">LLM 2</span><span class="node-name">Extract Company</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Code</span><span class="node-name">Parse JSON</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">API</span><span class="node-name">Serper: ML Search</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">LLM 3</span><span class="node-name">Verify w/ Evidence</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Code</span><span class="node-name">Parse JSON</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Gate 2</span><span class="node-name">Has ML Engineers?</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">API</span><span class="node-name">Serper: Decision Makers</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">LLM 4</span><span class="node-name">Extract People (JSON)</span></div>
+          </div>
+          <p class="workflow-note">Articles passing Gate 1 also trigger an immediate email alert in parallel. Diagram represents the production architecture; workflow runs privately in n8n.</p>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome"><strong>4</strong><span>LLM calls per article</span></div>
+          <div class="outcome"><strong>2</strong><span>qualification gates</span></div>
+          <div class="outcome"><strong>RAG</strong><span>evidence-based verification</span></div>
+          <div class="outcome"><strong>2</strong><span>cost-tiered models</span></div>
+        </div>
+      </article>
+
+      <!-- ===== PROJECT 2: OUTLANDER GTM LEAD GENERATOR ===== -->
+      <article class="project">
+        <div class="project-header">
+          <h3>Outlander Ventures — GTM Lead Generator</h3>
+          <span class="meta">2025 · Client Work</span>
+        </div>
+        <p class="role">Role: Sole builder — workflow design, JavaScript enrichment, and Google Sheets integration</p>
+        <p class="summary">
+          A local-business lead generation workflow that takes a niche and location as input, pulls candidate businesses from Serper Places, and runs each prospect through an enrichment pipeline that scores buying intent. Filters at &gt;100 reviews <em>before</em> any expensive HTTP work — a deliberate cost/performance choice so the workflow doesn't waste website fetches on businesses that will fail the gate anyway.
+        </p>
+        <p class="summary">
+          For each qualified prospect, a single JavaScript node fetches the website HTML and runs three parallel checks: it detects paid-ad investment via tracking pixels (Facebook Pixel, Google/GTM, TikTok) — a "smart money" signal that the business already spends on advertising; it extracts a contact email using a two-stage regex (preferring <code>mailto:</code> hrefs, falling back to raw pattern matching with junk filtering for image paths, Sentry errors, and Wix placeholders); and it flags multi-location operations by detecting common HTML patterns ("locations", "our areas", "serving these cities"). It also auto-generates a Meta Ad Library search URL per prospect — with a domain-as-fallback if the business name is missing — so the sales team can audit competitor ad creative in one click.
+        </p>
+        <p class="summary">
+          A subtle engineering detail: the Fetch Website node returns only HTML, breaking the data chain from Serper Places. The enrichment script handles this by reaching back to the Filter node by index and recombining the original prospect data with the scraped signals — keeping name, phone, address, rating, and reviews aligned with the new enrichment fields when results land in Google Sheets.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">n8n</span>
+          <span class="tag">Serper Places</span>
+          <span class="tag">Web Scraping</span>
+          <span class="tag">Buying-Intent Signals</span>
+          <span class="tag">Pixel Detection</span>
+          <span class="tag">Two-Stage Regex</span>
+          <span class="tag">Google Sheets API</span>
+          <span class="tag">Lead Enrichment</span>
+        </div>
+
+        <div class="workflow" aria-label="Outlander GTM Lead Generator workflow diagram">
+          <p class="workflow-title">Workflow Architecture</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">Trigger</span><span class="node-name">Manual Run</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Set</span><span class="node-name">Niche + Location</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">API</span><span class="node-name">Serper Places</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Split</span><span class="node-name">Per Business</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Filter</span><span class="node-name">Reviews &gt; 100</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">HTTP</span><span class="node-name">Fetch Website HTML</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">Code</span><span class="node-name">Enrich (JS)</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Output</span><span class="node-name">Google Sheets</span></div>
+          </div>
+          <p class="workflow-note">Enrichment script detects 3 ad networks, runs a 2-stage email extraction, flags multi-location operations, and recombines original Serper data with scraped signals before writing. Workflow runs privately in n8n.</p>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome"><strong>3</strong><span>ad networks detected</span></div>
+          <div class="outcome"><strong>2-stage</strong><span>email extraction</span></div>
+          <div class="outcome"><strong>Pre-filter</strong><span>saves HTTP calls</span></div>
+          <div class="outcome"><strong>1-click</strong><span>Ad Library audit</span></div>
+        </div>
+      </article>
+
+      <!-- ===== PROJECT 3: MORNING BRIEF BOT ===== -->
+      <article class="project">
+        <div class="project-header">
+          <h3>Morning Brief Bot</h3>
+          <span class="meta">2026 · Personal Build · Phases 1–2 shipped, Phase 3 in roadmap</span>
+        </div>
+        <p class="role">Role: Sole builder — system design, n8n workflows, agentic tool design, Discord bridge, Notion API integration</p>
+        <p class="summary">
+          A personal productivity automation I built to solve two of my own problems: not knowing what to work on first, and losing track of follow-ups. The bot reads from a Notion task database I designed (Priority, Category, Due Date, Last Touched, Today's Focus), uses Gemini to write a prioritised morning brief, and delivers it daily. Designed as a three-phase build — one-way broadcast → interactive bot → voice-call assistant — so each phase ships value without depending on the next.
+        </p>
+
+        <p class="summary">
+          <strong>Phase 1 — Daily brief (shipped).</strong> A 5-node n8n workflow runs every morning at 7:30am, queries all non-DONE tasks from Notion's 2025-09 data_sources API, then a JavaScript node sorts by priority and flags overdue items plus stale follow-ups (no contact in 3+ days). The enriched payload is sent to Gemini 2.5 Flash-Lite with a formatting prompt; the model returns a brief with top 3 priorities, overdue items, stale items, and a closing accountability question. Posted to Discord via webhook. Cost: roughly $0.0001 per run.
+        </p>
+
+        <p class="summary">
+          <strong>Phase 2 — Two-way agent (shipped).</strong> Replies in Discord now control Notion. n8n can't natively subscribe to Discord, so I wrote a small Node.js bridge running alongside n8n that uses discord.js to listen to my channel and POSTs each message to an n8n webhook. The webhook hands the message to a LangChain AI Agent backed by Gemini, with eight tools exposed to it. The agent picks tools dynamically and chains them — for "done: client proposal" it calls <code>search_task_by_name</code> first to retrieve the Notion page ID, then <code>mark_task_done</code> with that ID. Tool parameters are populated by the model itself via n8n's <code>$fromAI()</code>, so there's no hardcoded if/switch routing — the LLM is the router.
+        </p>
+
+        <p class="summary">
+          <strong>Phase 3 — Vapi voice (roadmap).</strong> Vapi calls my phone in the morning, reads the brief aloud, asks me to speak my one daily commitment, and writes the transcribed commitment back to Notion. Falls back to the Discord message if the call is missed.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">n8n</span>
+          <span class="tag">LangChain AI Agent</span>
+          <span class="tag">Tool Calling</span>
+          <span class="tag">Gemini 2.5 Flash-Lite</span>
+          <span class="tag">Notion API (2025-09)</span>
+          <span class="tag">discord.js Bridge</span>
+          <span class="tag">Scheduled Automation</span>
+          <span class="tag">Vapi (Roadmap)</span>
+          <span class="tag">Personal Automation</span>
+        </div>
+
+        <div class="workflow" aria-label="Morning Brief Bot Phase 1 workflow diagram">
+          <p class="workflow-title">Phase 1 — Daily Brief Workflow (5 nodes)</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">Trigger</span><span class="node-name">Schedule 7:30am</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">API</span><span class="node-name">Fetch Notion Tasks</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Code</span><span class="node-name">Sort + Flag Stale</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">LLM</span><span class="node-name">Gemini Writes Brief</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Output</span><span class="node-name">Discord Webhook</span></div>
+          </div>
+        </div>
+
+        <div class="workflow" aria-label="Morning Brief Bot Phase 2 workflow diagram">
+          <p class="workflow-title">Phase 2 — Two-Way Agent Workflow (12 nodes)</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">User</span><span class="node-name">Discord Message</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Bridge</span><span class="node-name">discord.js → POST</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Webhook</span><span class="node-name">n8n Receiver</span></div>
+            <span class="arrow">→</span>
+            <div class="node ai"><span class="node-type">Agent</span><span class="node-name">Gemini + 8 Tools</span></div>
+            <span class="arrow">→</span>
+            <div class="node"><span class="node-type">Output</span><span class="node-name">Discord Reply</span></div>
+          </div>
+          <p class="workflow-title" style="margin-top: var(--space-sm);">Agent Tools (Notion API, populated via $fromAI)</p>
+          <div class="tag-row" style="margin: 0;">
+            <span class="tag">get_active_tasks</span>
+            <span class="tag">get_overdue_tasks</span>
+            <span class="tag">search_task_by_name</span>
+            <span class="tag">mark_task_done</span>
+            <span class="tag">set_today_focus</span>
+            <span class="tag">create_task</span>
+            <span class="tag">snooze_task</span>
+            <span class="tag">touch_task</span>
+          </div>
+          <p class="workflow-note">The agent reasons across tools rather than following fixed routing. Workflows run privately in n8n; the discord.js bridge runs alongside.</p>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome"><strong>2 / 3</strong><span>phases shipped</span></div>
+          <div class="outcome"><strong>8</strong><span>agent tools</span></div>
+          <div class="outcome"><strong>~$0.0001</strong><span>per brief</span></div>
+          <div class="outcome"><strong>Daily</strong><span>since launch</span></div>
+        </div>
+      </article>
+
+      <!-- ===== PROJECT 4: A TO Z CONSTRUCTION ===== -->
+      <article class="project">
+        <div class="project-header">
+          <h3>A to Z Construction</h3>
+          <span class="meta">2025 · Client Site · atoz434.com</span>
+        </div>
+        <p class="role">Role: Designer, developer, SEO engineer</p>
+        <p class="summary">
+          Designed, built, and launched a production website for a local construction client. Implemented on-page SEO, technical SEO, and structured content targeting local search queries and AI answer engines.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">Web Design</span>
+          <span class="tag">On-page SEO</span>
+          <span class="tag">Technical SEO</span>
+          <span class="tag">Schema Markup</span>
+          <span class="tag">AEO</span>
+          <span class="tag">Local SEO</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://atoz434.com" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label">Stack</p>
+      <h2>Tools &amp; technologies</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>AI &amp; Automation</h4>
+          <ul>
+            <li>Vapi (Voice AI)</li>
+            <li>n8n</li>
+            <li>OpenAI API</li>
+            <li>Anthropic Claude API</li>
+            <li>RAG / Vector Search</li>
+            <li>Prompt Engineering</li>
+            <li>Apify</li>
+            <li>Serper API</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>GTM Engineering</h4>
+          <ul>
+            <li>Lead Generation Automation</li>
+            <li>Lead Enrichment</li>
+            <li>Outbound Workflows</li>
+            <li>CRM Integrations</li>
+            <li>Appointment-Setting Ops</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Web &amp; Mobile</h4>
+          <ul>
+            <li>React Native</li>
+            <li>JavaScript</li>
+            <li>HTML / CSS</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Java</li>
+            <li>Supabase</li>
+            <li>REST APIs</li>
+            <li>Replit</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>SEO &amp; AEO</h4>
+          <ul>
+            <li>On-page SEO</li>
+            <li>Technical SEO</li>
+            <li>Answer Engine Optimization</li>
+            <li>Schema Markup (JSON-LD)</li>
+            <li>Site Performance</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Tools</h4>
+          <ul>
+            <li>GitHub</li>
+            <li>VS Code</li>
+            <li>Figma</li>
+            <li>Microsoft Office</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (AEO POWERHOUSE) ============ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2>Common questions</h2>
+      <p class="section-sub">Answers structured for both humans and AI answer engines.</p>
+
+      <details>
+        <summary>What does Ashton Dean do?</summary>
+        <p>Ashton Dean is an AI Solution Architect who builds Voice AI agents with Vapi, agentic workflows in n8n, automated lead-generation pipelines, and SEO-optimized websites for businesses.</p>
+      </details>
+
+      <details>
+        <summary>What is Go-to-Market (GTM) engineering?</summary>
+        <p>GTM engineering applies software automation to sales and marketing pipelines: automated prospecting, lead enrichment, outbound sequencing, and CRM integration. Ashton builds these systems using n8n, Serper, Apify, and LLM-based qualification.</p>
+      </details>
+
+      <details>
+        <summary>What tools does Ashton specialize in?</summary>
+        <p>n8n and Vapi are primary platforms, paired with OpenAI and Anthropic Claude APIs, Apify, Serper, Supabase, React Native, and standard web tooling for SEO-optimized sites.</p>
+      </details>
+
+      <details>
+        <summary>Is Ashton available for freelance or contract work?</summary>
+        <p>Yes. Ashton takes on projects involving AI voice agents, workflow automation, GTM engineering, and SEO/AEO website builds. Email ashdean1055@gmail.com to discuss.</p>
+      </details>
+
+      <details>
+        <summary>Why aren't the n8n workflows publicly viewable?</summary>
+        <p>Workflows often contain client-specific logic, API keys, and proprietary prompts. The diagrams shown represent the architecture and node sequence; the production workflows remain private. Demos available on request.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2>Let's build something.</h2>
+      <p class="section-sub" style="margin-left: auto; margin-right: auto;">
+        Open to AI architecture, automation, GTM, and web development work — contract or full-time.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:ashdean1055@gmail.com">ashdean1055@gmail.com</a>
+        <a href="https://www.linkedin.com/in/ashton-dean-3144b7201" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="tel:+19197587027">(919) 758-7027</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>© <span id="year"></span> Ashton Dean · Lynchburg, VA</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
