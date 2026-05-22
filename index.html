@@ -181,7 +181,7 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 1.0;          /* dim slightly for text legibility */
+  opacity: 0.65;          /* dim slightly for text legibility */
   overflow: hidden;
 }
 .spline-backdrop iframe {
@@ -200,8 +200,8 @@ body::before {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 22, 40, 0.2) 0%,
-    rgba(10, 22, 40, 0.15) 100%
+    rgba(10, 22, 40, 0.45) 0%,
+    rgba(10, 22, 40, 0.35) 100%
   );
   pointer-events: none;
 }
@@ -1116,6 +1116,61 @@ footer.site {
         </div>
       </article>
 
+      <!-- ===== PROJECT V — BOOKSHELF (Django) ===== -->
+      <article class="project">
+        <div class="project-header">
+          <div class="numeral-badge" aria-label="Project five">V</div>
+          <div class="project-header-text">
+            <h3>BookShelf — Django Catalog with REST API</h3>
+            <span class="meta">2026 · Personal build · Python &amp; Django practice</span>
+          </div>
+        </div>
+        <p class="role">Role: Sole builder — data modeling, views, templates, authentication, REST API</p>
+        <p class="summary">
+          A Django web application that models a real-world publishing catalog and serves three distinct audiences from a single codebase and database: a public-facing reader website, a Django admin panel for editorial staff, and a JSON REST API at <code>/api/books/</code> for downstream consumers like mobile apps or partner integrations. I built it to learn Django end-to-end — models, templates, forms, sessions, auth, and Django REST Framework — in a context that mirrors how a real content-driven company actually runs its website.
+        </p>
+        <p class="summary">
+          The data layer is three models — <code>Author</code>, <code>Category</code>, <code>Book</code> — wired with a <code>ForeignKey</code> (book → author) and a <code>ManyToManyField</code> (book ↔ categories), each using <code>related_name</code> for clean reverse access. Both the HTML views and the API views read from the same ORM, so the public site, admin, and API can never drift out of sync.
+        </p>
+        <p class="summary">
+          <strong>Engineering decisions worth flagging.</strong> Fixed the N+1 query problem in the list view by replacing <code>Book.objects.all()</code> with <code>select_related("author").prefetch_related("categories")</code> — turning what would have been 151 queries on a 50-book page into 2. Explicit field lists in <code>ModelForm</code> and <code>ModelSerializer</code> instead of <code>fields = "__all__"</code>, so future sensitive fields don't auto-leak into public endpoints. DRF permissions set to <code>IsAuthenticatedOrReadOnly</code> — anonymous reads, authenticated writes, which is how a real publishing API should behave. CSRF tokens on every POST form including logout (changing server state should never be triggerable by a GET link). Serializer augmented with both raw IDs and human-readable names so the JSON is useful to humans as well as machines.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">Python 3.14</span>
+          <span class="tag">Django 6.0</span>
+          <span class="tag">Django REST Framework</span>
+          <span class="tag">ORM Modeling</span>
+          <span class="tag">N+1 Optimization</span>
+          <span class="tag">Session Auth</span>
+          <span class="tag">CSRF Protection</span>
+          <span class="tag">Permission Classes</span>
+          <span class="tag">ModelSerializers</span>
+          <span class="tag">SQLite</span>
+        </div>
+
+        <div class="workflow" aria-label="BookShelf architecture diagram">
+          <p class="workflow-title">Architecture — Three Audiences, One Source of Truth</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">Data</span><span class="node-name">Author · Category · Book</span></div>
+            <span class="arrow">▸</span>
+            <div class="node ai"><span class="node-type">ORM</span><span class="node-name">Django Models</span></div>
+            <span class="arrow">▸</span>
+            <div class="node"><span class="node-type">Layer 1</span><span class="node-name">HTML Templates</span></div>
+            <div class="node"><span class="node-type">Layer 2</span><span class="node-name">Admin Panel</span></div>
+            <div class="node"><span class="node-type">Layer 3</span><span class="node-name">REST API (DRF)</span></div>
+          </div>
+          <p class="workflow-note">Public readers, editorial staff, and API consumers all draw from the same ORM — so the site, admin, and downstream apps can never drift out of sync. Code is open-source on GitHub; live demo available on request.</p>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome"><strong>151 → 2</strong><span>queries after N+1 fix</span></div>
+          <div class="outcome"><strong>3</strong><span>audiences, 1 database</span></div>
+          <div class="outcome"><strong>Read-only</strong><span>public · auth'd writes</span></div>
+          <div class="outcome"><strong>CRUD</strong><span>web + admin + API</span></div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -1150,7 +1205,8 @@ footer.site {
             <li>React Native</li>
             <li>JavaScript</li>
             <li>HTML / CSS</li>
-            <li>Python</li>
+            <li>Python · Django</li>
+            <li>Django REST Framework</li>
             <li>SQL · Java</li>
             <li>Supabase</li>
             <li>REST APIs</li>
