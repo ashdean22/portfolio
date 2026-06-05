@@ -602,6 +602,26 @@ section .section-sub {
 }
 
 /* ===================================================
+   VIDEO EMBED — vertical YouTube Shorts
+   =================================================== */
+.video-embed {
+  max-width: 340px;
+  margin: var(--space-md) auto;
+  aspect-ratio: 9 / 16;
+  background: var(--bg);
+  border: 1px solid var(--border-gold);
+  position: relative;
+  overflow: hidden;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===================================================
    OUTCOMES
    =================================================== */
 .outcomes {
@@ -1088,10 +1108,103 @@ footer.site {
         </div>
       </article>
 
-      <!-- ===== PROJECT IV — A TO Z CONSTRUCTION ===== -->
+      <!-- ===== PROJECT IV — CLOSET OS ===== -->
       <article class="project">
         <div class="project-header">
           <div class="numeral-badge" aria-label="Project four">IV</div>
+          <div class="project-header-text">
+            <h3>Closet OS — AI Wardrobe with Multimodal RAG</h3>
+            <span class="meta">2026 · Personal build · 7-day sprint · Android APK shipped</span>
+          </div>
+        </div>
+        <p class="role">Role: Sole builder — mobile UI, AI pipelines, vector search, auth, anti-hallucination design</p>
+        <p class="summary">
+          A React Native (Expo) wardrobe app: photograph each clothing item once, the system auto-tags and embeds it, and you ask for outfits in plain English — <em>"outfit for a 65° rainy interview"</em> — and it assembles one from clothes you actually own. Built end-to-end in seven days with real auth, vector search, and a published Android APK.
+        </p>
+        <p class="summary">
+          <strong>The architecture is multimodal RAG, but on images instead of documents.</strong> When a user photographs a garment, a Claude Vision call extracts structured tags (color, category, formality, season, material), then Gemini's <code>gemini-embedding-001</code> turns the item into a 768-dimensional vector — using Matryoshka sizing — stored in Postgres <code>pgvector</code> with an HNSW index for fast approximate nearest-neighbor search. At query time, the user's natural-language request is embedded with the same model, top-K matching items are retrieved by cosine similarity, and Claude assembles an outfit with reasoning — but <strong>constrained to only the items returned from the vector search</strong>. That constraint is the anti-hallucination guarantee: the model can't invent clothes the user doesn't own.
+        </p>
+        <p class="summary">
+          <strong>Engineering details worth flagging.</strong> Supabase Row-Level Security scopes every query — including the vector search — per authenticated user, so no user can see or retrieve another user's wardrobe. Cosine-similarity duplicate detection prevents users from photographing the same shirt twice, with the threshold tuned against real 85–95% similarity scores from my own closet. Wear tracking feeds back into the outfit engine so it can factor in "what hasn't been worn lately." EAS Update workflow set up for live demo iteration; Android APK published.
+        </p>
+        <p class="summary">
+          <strong>Meta-skill worth naming.</strong> Most of this was orchestrated through <strong>Claude Code with custom subagents</strong> — an agentic build workflow where specialized sub-agents handle distinct slices of the work (UI, backend, embeddings, auth) under coordination. Building software <em>with</em> agentic tooling is itself the AI Solution Architect skill set, applied to my own stack.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Claude Vision</span>
+          <span class="tag">Gemini Embeddings</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">HNSW Index</span>
+          <span class="tag">Matryoshka Sizing</span>
+          <span class="tag">Multimodal RAG</span>
+          <span class="tag">Row Level Security</span>
+          <span class="tag">Anti-Hallucination</span>
+          <span class="tag">Cosine Similarity</span>
+          <span class="tag">Claude Code Subagents</span>
+        </div>
+
+        <div class="workflow" aria-label="Closet OS ingestion pipeline diagram">
+          <p class="workflow-title">Ingestion — Photograph → Vector Store</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">User</span><span class="node-name">Photo Capture</span></div>
+            <span class="arrow">▸</span>
+            <div class="node ai"><span class="node-type">LLM</span><span class="node-name">Claude Vision — Auto-Tag</span></div>
+            <span class="arrow">▸</span>
+            <div class="node ai"><span class="node-type">Embed</span><span class="node-name">Gemini · 768-dim</span></div>
+            <span class="arrow">▸</span>
+            <div class="node"><span class="node-type">Check</span><span class="node-name">Dedup (Cosine)</span></div>
+            <span class="arrow">▸</span>
+            <div class="node"><span class="node-type">Storage</span><span class="node-name">pgvector + HNSW</span></div>
+          </div>
+        </div>
+
+        <div class="workflow" aria-label="Closet OS outfit query pipeline diagram">
+          <p class="workflow-title">Outfit Query — Plain English → Outfit</p>
+          <div class="workflow-flow">
+            <div class="node trigger"><span class="node-type">User</span><span class="node-name">"65° rainy interview"</span></div>
+            <span class="arrow">▸</span>
+            <div class="node ai"><span class="node-type">Embed</span><span class="node-name">Gemini · Query Vector</span></div>
+            <span class="arrow">▸</span>
+            <div class="node"><span class="node-type">Search</span><span class="node-name">Top-K via Cosine</span></div>
+            <span class="arrow">▸</span>
+            <div class="node ai"><span class="node-type">LLM</span><span class="node-name">Claude Assembles Outfit</span></div>
+            <span class="arrow">▸</span>
+            <div class="node"><span class="node-type">Output</span><span class="node-name">Outfit + Reasoning</span></div>
+          </div>
+          <p class="workflow-note">Claude is constrained to assemble outfits only from items returned by the vector search — preventing hallucinated clothing the user doesn't own. Row-Level Security scopes the search to the authenticated user's wardrobe only.</p>
+        </div>
+
+        <div class="video-embed" aria-label="Closet OS demo video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/wg4kBuxpNyE"
+            title="Closet OS demo video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="outcomes">
+          <div class="outcome"><strong>7 days</strong><span>idea → shipped APK</span></div>
+          <div class="outcome"><strong>768-dim</strong><span>Matryoshka embeddings</span></div>
+          <div class="outcome"><strong>HNSW</strong><span>vector index</span></div>
+          <div class="outcome"><strong>RLS</strong><span>per-user scoping</span></div>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/ashdean22/closet-os" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://youtube.com/shorts/wg4kBuxpNyE" target="_blank" rel="noopener">Watch demo →</a>
+        </div>
+      </article>
+
+      <!-- ===== PROJECT V — A TO Z CONSTRUCTION ===== -->
+      <article class="project">
+        <div class="project-header">
+          <div class="numeral-badge" aria-label="Project five">V</div>
           <div class="project-header-text">
             <h3>A to Z Construction</h3>
             <span class="meta">2025 · Client site · atoz434.com</span>
@@ -1116,10 +1229,10 @@ footer.site {
         </div>
       </article>
 
-      <!-- ===== PROJECT V — BOOKSHELF (Django) ===== -->
+      <!-- ===== PROJECT VI — BOOKSHELF (Django) ===== -->
       <article class="project">
         <div class="project-header">
-          <div class="numeral-badge" aria-label="Project five">V</div>
+          <div class="numeral-badge" aria-label="Project six">VI</div>
           <div class="project-header-text">
             <h3>BookShelf — Django Catalog with REST API</h3>
             <span class="meta">2026 · Personal build · Python &amp; Django practice</span>
@@ -1171,7 +1284,7 @@ footer.site {
         </div>
 
         <div class="project-links">
-          <a href="https://github.com/ashdean22" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://github.com/ashdean22/bookshelf-django" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
       </article>
 
