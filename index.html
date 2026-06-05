@@ -622,6 +622,93 @@ section .section-sub {
 }
 
 /* ===================================================
+   ANDROID INSTALL BLOCK
+   =================================================== */
+.install-block {
+  background: var(--bg-elev);
+  border: 1px solid var(--border-gold);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  position: relative;
+}
+.install-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px dashed var(--border);
+}
+.install-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  margin-top: var(--space-sm);
+}
+@media (min-width: 640px) {
+  .install-grid { grid-template-columns: 2fr 1fr; }
+}
+.install-steps {
+  list-style: decimal inside;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  padding: 0;
+}
+.install-steps li {
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.install-steps li:last-child { border-bottom: none; }
+.install-steps li::marker {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.install-steps code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+}
+.install-qr {
+  text-align: center;
+}
+.install-qr img {
+  border: 3px solid var(--accent);
+  background: white;
+  padding: 6px;
+  display: inline-block;
+  max-width: 180px;
+  height: auto;
+}
+.install-qr-caption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: var(--space-sm);
+}
+.install-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+.install-note {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-style: italic;
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+/* ===================================================
    OUTCOMES
    =================================================== */
 .outcomes {
@@ -1188,8 +1275,28 @@ footer.site {
           ></iframe>
         </div>
 
+        <div class="install-block" aria-labelledby="closet-install-title">
+          <p class="install-title" id="closet-install-title">Try the demo on Android</p>
+          <div class="install-grid">
+            <ol class="install-steps">
+              <li>Open the link below <strong>on your Android device</strong> — Chrome works best.</li>
+              <li>On the Expo build page, tap <strong>Install</strong>. Your browser will download an <code>.apk</code> file.</li>
+              <li>Open the downloaded file. If Android asks to allow installs from your browser, tap <strong>Settings</strong>, turn it on, then go back.</li>
+              <li>Tap <strong>Install</strong> to finish. Closet OS will appear in your app drawer.</li>
+            </ol>
+            <div class="install-qr">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;qzone=2&amp;data=https%3A%2F%2Fexpo.dev%2Faccounts%2Fgabe822%2Fprojects%2Fcloset-os%2Fbuilds%2Fa128c759-4432-4593-86ab-bc9ca892e733" alt="QR code that opens the Closet OS Android build link" width="200" height="200" loading="lazy" />
+              <p class="install-qr-caption">Scan to open on phone</p>
+            </div>
+          </div>
+          <div class="install-cta">
+            <a href="https://expo.dev/accounts/gabe822/projects/closet-os/builds/a128c759-4432-4593-86ab-bc9ca892e733" class="btn btn-primary" target="_blank" rel="noopener">Open the Android build →</a>
+          </div>
+          <p class="install-note">Android only — iOS isn't supported for this demo. The "unknown sources" prompt is normal for any app installed outside the Play Store.</p>
+        </div>
+
         <div class="outcomes">
-          <div class="outcome"><strong>3 days</strong><span>idea → shipped APK</span></div>
+          <div class="outcome"><strong>7 days</strong><span>idea → shipped APK</span></div>
           <div class="outcome"><strong>768-dim</strong><span>Matryoshka embeddings</span></div>
           <div class="outcome"><strong>HNSW</strong><span>vector index</span></div>
           <div class="outcome"><strong>RLS</strong><span>per-user scoping</span></div>
